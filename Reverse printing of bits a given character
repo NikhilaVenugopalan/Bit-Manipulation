@@ -1,0 +1,20 @@
+//WAP FOR REVERSE PRINTING OF BITS OF A CHARACTER//
+
+#include<stdio.h>
+void main()
+{
+  char ch;
+  int pos;
+  printf("enter the character\n");
+  scanf(" %c",&ch);
+  
+  printf("before reverse\n");
+  for(pos=7;pos>=0;pos--)
+    printf("%d",ch>>pos&1);
+  printf("\n");
+  
+  printf("after revrse\n");
+  for(pos=0;pos>=7;pos++)
+    printf("%d",ch>>pos&1);
+  printf("\n");
+}
