@@ -1,0 +1,27 @@
+//WAP TO REVERSE THE BITS OF A CHARACTER//
+
+#include<stdio.h>
+void main()
+{
+  char ch;
+  int pos,i,j;
+  printf("enter the character\n");
+  scanf(" %c",&ch);
+  printf("before reverse\n");
+  for(pos=7;pos>=0;pos--)
+    printf("%d",ch>>pos&1);
+  printf("\n");
+
+  for(i=0,j=7;i<j;i++,j--)
+    {
+      if((ch>>i&1)!=(ch>>j&1))
+        {
+            ch=ch^1<<i;
+            ch=ch^1<<j;
+        }
+    }
+  printf("after reverse\n");
+  for(pos=7;pos>=0;po--)
+    printf("%d",ch>>pos&1);
+  printf("\n");
+}  
