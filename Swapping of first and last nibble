@@ -1,0 +1,28 @@
+//SWAPPING LAST AND FIRST NIBBLE OF A SHORT INT//
+
+#include<stdio.h>
+void main()
+{
+int num,pos,n1,n2,n3,n4,n5,n6;
+printf("enter the number\n");
+scanf("%d",&num);
+printf("before swap\n");
+for(pos=15;pos>=0;pos--)
+printf("%d",num>>pos&1);
+printf("\n");
+
+n1=num&0xf000;
+n2=num&0x0f00;
+n3=num&0x00f0;
+n4=num&0x000f;
+
+n5=n1>>12;
+n6=n4<<12;
+
+num=n5|n2|n3|n6;
+
+printf("after swapping\n");
+for(pos=15;pos>=0;pos--)
+printf("%d",num>>pos&1);
+printf("\n");
+}
